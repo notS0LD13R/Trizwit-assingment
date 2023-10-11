@@ -1,6 +1,3 @@
-:root {
-}
-
 //Resets
 
 * {
@@ -33,6 +30,7 @@ input {
 }
 button {
     -webkit-appearance: none;
+    appearance: none;
     border-radius: 0;
     text-align: inherit;
     background: none;

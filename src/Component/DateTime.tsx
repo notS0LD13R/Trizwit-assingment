@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { BarLoader } from "react-spinners";
 
 import "./DateTime.scss";
-import routes from "../services/routes";
+import { getDateTime } from "../services/api";
 
 export default function DateTime() {
     const [date, setDate] = useState<Date | null>(null);
@@ -15,9 +14,7 @@ export default function DateTime() {
                 setTimeout(res, 3000);
             });
 
-            const response = new Date(
-                (await axios.get(routes.date_time)).data.datetime
-            );
+            const response = new Date(await getDateTime());
             setDate(response);
 
             setInterval(() => {
